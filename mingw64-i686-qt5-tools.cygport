@@ -2,7 +2,7 @@ TOOLCHAIN_TARGET="i686-w64-mingw32"
 inherit toolchain qt5-qmake
 
 NAME="mingw64-i686-qt5-tools"
-VERSION=5.9.3
+VERSION=5.9.4
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Qt5 development tools for Win32 toolchain"
@@ -19,6 +19,8 @@ PATCH_URI="
 "
 
 RESTRICT="debuginfo"
+CFLAGS+=" -fno-stack-protector"
+CXXFLAGS+=" -fno-stack-protector"
 
 src_install() {
 	local x xname
